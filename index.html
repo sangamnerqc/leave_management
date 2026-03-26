@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Leave Management</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Login -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<h2>College Leave Management System</h2>
+
+<!-- LOGIN -->
+<div id="loginSection">
+  <div id="g_id_onload"
+       data-client_id="YOUR_GOOGLE_CLIENT_ID"
+       data-callback="handleCredentialResponse">
+  </div>
+  <div class="g_id_signin"></div>
+</div>
+
+<!-- MAIN APP -->
+<div id="appSection" style="display:none;">
+
+  <h3>Welcome: <span id="userEmail"></span></h3>
+
+  <form id="leaveForm">
+
+    <input id="name" placeholder="Full Name" required>
+    <input id="email" readonly>
+
+    <input type="date" id="from" required>
+    <input type="date" id="to" required>
+
+    <input id="className" placeholder="Class (FYBSc etc)" required>
+    <input id="lectureTime" placeholder="Lecture Time (10:00-11:00)" required>
+
+    <input id="adjustTo" placeholder="Assign to (Teacher Email)" required>
+
+    <input id="reason" placeholder="Reason" required>
+
+    <button type="submit">Submit Leave</button>
+  </form>
+
+  <hr>
+
+  <h3>Track Your Leave</h3>
+  <button onclick="trackStatus()">Check Status</button>
+
+  <div id="status"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
